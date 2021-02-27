@@ -38,6 +38,7 @@ async function getNetflixOriginalMovies() {
   const response = await xhr.getRequest(
     `${process.env.BASE_URL}/discover/tv?api_key=${process.env.API_KEY}&with_networks=213`
   );
+  console.log(process.env.API_KEY);
   ui.show_netflix_originals(response);
   ui.show_header_banner(response);
 }
