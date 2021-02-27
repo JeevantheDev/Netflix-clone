@@ -1,0 +1,134 @@
+.row_posters {
+    display: flex;
+    padding: 10px 0;
+    white-space: nowrap;
+    transition: 450ms transform;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &_poster {
+        display: inline-block;
+        position: relative;
+        margin-right: 10px;
+        transition: all 0.45s ease-in-out;
+        cursor: pointer;
+        z-index: 1;
+        object-fit: fill;
+
+        &:first-child {
+            transform-origin: center left;
+        }
+
+        &:last-child {
+            transform-origin: center right;
+        }
+
+        &_img {
+            width: 350px;
+            height: (350px / (16/9));
+            border-radius: 5.55px;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            z-index: 2;
+        }
+
+        &_details {
+            width: 100%;
+            height: 100%;
+            color: $primary-white-color;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.45s ease;
+
+            h4 {
+                text-align: center;
+                margin-top: 30rem;
+                white-space: normal;
+                transition: all 0.45s ease;
+            }
+
+            button {
+                background: none;
+                border: none;
+                outline: none;
+                cursor: pointer;
+
+                i {
+                    color: $primary-white-color;
+                }
+            }
+        }
+
+        &:hover &_details {
+            h4 {
+                margin-top: 0;
+            }
+
+            opacity: 1;
+        }
+
+        &_img_large {
+            height: 500px;
+            width: 300px;
+            border-radius: 5.55px;
+        }
+
+        &_details_large {
+            width: 100%;
+            height: 100%;
+            color: $primary-white-color;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.45s ease;
+
+            h4 {
+                text-align: center;
+                margin-top: 5rem;
+                white-space: normal;
+                transition: all 0.45s ease;
+            }
+
+            button {
+                background: none;
+                border: none;
+                outline: none;
+                cursor: pointer;
+
+                i {
+                    color: $primary-white-color;
+                }
+            }
+        }
+
+
+        &:hover &_details_large {
+            h4 {
+                margin-top: 0;
+            }
+
+            padding-bottom: 3rem;
+            opacity: 1;
+        }
+    }
+}
